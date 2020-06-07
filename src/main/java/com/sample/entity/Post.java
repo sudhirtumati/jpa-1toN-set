@@ -6,9 +6,7 @@ import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -37,7 +35,7 @@ public class Post {
     }
 
     public void removeComment(Comment comment) {
-        if(comments == null || comments.isEmpty()) {
+        if (comments == null || comments.isEmpty()) {
             return;
         }
         comments.remove(comment);
