@@ -24,11 +24,11 @@ public class Post {
     private String name;
 
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Comment> comments;
+    private List<Comment> comments;
 
     public void addComment(Comment comment) {
         if (comments == null) {
-            comments = new HashSet<>();
+            comments = new ArrayList<>();
         }
         comment.setPost(this);
         comments.add(comment);
